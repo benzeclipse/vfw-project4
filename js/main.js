@@ -88,7 +88,7 @@ function storeLocalData( key ) {  // passing in "edit" item from tutorial 3.6
 		it.group 	= ["More Stuff ", 		 main('group').value];  
 		it.aDate	= ["Date ", 			 main("aDate").value];
 		it.range	= ["Tickets Desired ",	 main("range").value];
-		it.season	= ["Season ", 			 seasonValue];          
+		//it.season	= ["Season ", 			 seasonValue];          
 		it.payments	= ["Payments ", 		 main("payments").value];	
 		it.concerns = ["Concerns",	         main("concerns").value];
 
@@ -117,16 +117,19 @@ function getData () {
 
 		// looking in local storage
 		for(var i=0, j=localStorage.length; i<j; i++) {
-		var makeli = document.createElement("ul");
-			
-		var linksLi = document.createElement("ul");  //creating another list item for week 3
-			
+		var makeli = document.createElement("ul");		
+		var linksLi = document.createElement("ul");  //creating another list item for week 3		
 		makeList.appendChild(makeli);
 		var key = localStorage.key(i);
 		var value = localStorage.getItem(key);
 		var object = JSON.parse(value); // convert local storage string back to object
 		var makeSubList = document.createElement("li");
 		makeli.appendChild(makeSubList);
+		
+		
+		getImages(object.group[1], makeSubList); // Project 4 images
+		
+		
 		for ( var m in object ) {
 			var makeSubLi = document.createElement("li");
 			makeSubList.appendChild(makeSubLi);
@@ -140,6 +143,17 @@ function getData () {
 	}// the makeItemLinks(localStorage.key[i],linksLi); threw me for a curve!!!! had [i], instead of (i)!!!
 	
 }
+
+// Getting images from right category being display, project 4
+function getImages(dropDownList, makeSubList){
+	var imageLi = document.createElement('li');
+	makeSubList.appendChild(imageLi);
+	var newImage = document.createElement('img');
+	var setSource = newImage.setAttribute("src", "../images/"+ dropDownList + ".png" );
+	imageLi.appendChild(newImage);
+	
+}
+
 	
 // make item links functions for local data
 // Create the edit and delete links for each stored data item when display.
@@ -294,7 +308,7 @@ function fillData(){
 }
 
 	// Variable defaults drop down menu
-	var addStuff = [ "tickets", "souvenirs", "apparels" ],
+	var addStuff = [ "Tickets", "Souvenirs", "Apparels" ],
 	seasonValue,
 	errorMsg = main("errors");
 
