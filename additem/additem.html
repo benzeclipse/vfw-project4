@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- Project 4, Banchop Ben Kangdouangnhot, Term 1305, VFW -->
+<html>
+	<head>
+    	<title>Ticket Hub</title>
+ 		<link rel="stylesheet" href="../css/styles.css" type="text/css" />
+   	    <meta charset="UTF-8">
+    	<meta name = "MobileOptimized" content= "320" />
+    	<meta name = "robot" content="index, follow" />
+   	    <meta name = "HandheldFriendly" content="True" />
+   	    <meta name = "viewport" content="user-scalable=no, width=device-width"/>
+	</head>
+	<body>
+  	<header>
+ 		<h1 id="h1">Ticket Hub</h1>
+ 	    <h2 id="h2" >Ticket Info</h2> 
+   </header>
+   		<nav>
+   			<a href="#" id="Info"> Show Info</a>
+			<a href="../additem/additem.html" id="clearData">Clear Data</a>
+		</nav>
+   <form action="#" method = "post" id="forms">
+       <fieldset>
+			<legend>Information</legend>
+			<ul id="errors" ></ul>
+			<ul>
+				<li><label for="team"> Desired Sport:  </label><input type = "text" id = "sport" placeholder="enter favorite sport"/></li>
+ 				<li><label for="tname"> Team Name: </label><input type = "text" id = "tname" placeholder="enter team name"/></li>
+ 				<li><label for="name"> Your name </label><input type = "text" id = "name" placeholder="enter your full name"/></li>
+ 				<li id="mStuff"><label for="group">More Stuff </label></li>
+  	  		</ul>
+	   </fieldset>
+	   <fieldset>
+	   		<legend>Availability</legend>
+	  		<ul>
+				<text> Add dates: </text>
+				<li><input id="aDate"  <input type="date" />		
+ 				<li><label for => Season Ticket</label><input type="radio" value ="Season" id="season" name="any"/></li>
+ 				<li><label for => Single Ticket </label><input type="radio" value="Single"  id="single" name="any"></li>
+ 			</ul>		
+ 			</label>
+			<div>
+				<label>Chose 1 - 100 tickets</label>
+				<input id="range" type="range" min="0" max="100" value="1"/>
+			    <input id="tickets" type="text" value="1"/>
+			</div>		 
+	   </fieldset>
+	   <fieldset>
+    		<legend>Preferences</legend>
+			<ul>
+ 	 			<li><label for="payments">Preferred Method of Payment</label></li>
+  				<select id="payments">
+	   <optgroup label="Method">
+	   		<option value ="Credit" id="credit">Credit Card</option>
+	  		<option value ="Cash" id="cash">Cash</option>
+	   		<option value="Check" id="check">Check</option>
+	   </optgroup>
+	 			</select>
+	 		<li>
+	  			<label for="concerns"> Please tell us what seats and pricing you prefer </label><textarea id="concerns"></textarea>
+	  		</li>			
+	 		</ul>
+	  </fieldset>
+	</form>
+			<nav>
+			<input type="button" value="Save All" id="saveValues" </>
+	  		<a href="../additem/additem.html" id="back" style="display:none;"> Back </a>		    			
+			</nav>
+	  <script type="text/javascript" src="../js/json.js"></script>
+  	  <script type="text/javascript" src="../js/main.js"></script>
+	</body>
+</html>
